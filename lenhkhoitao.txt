@@ -1,0 +1,6 @@
+#Lệnh khởi tạo private_key và public_key
+openssl genpkey -algorithm RSA -out private_key.pem -pkeyopt rsa_keygen_bits:2048
+openssl rsa -in private_key.pem -pubout -out public_key.pem
+#Lệnh khởi tạo server.key và server.crt
+openssl req -x509 -newkey rsa:2048 -keyout server.key -out server.crt -days 365 -nodes
+
